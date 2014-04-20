@@ -7,6 +7,7 @@
 //
 
 #import "otgMainViewController.h"
+#import "BDDROneFingerZoomGestureRecognizer.h"
 
 @interface otgMainViewController ()
 
@@ -14,11 +15,26 @@
 
 @implementation otgMainViewController
 
+@synthesize temperature;
+@synthesize wanted_temperature;
+@synthesize temperatureLabel;
+@synthesize tapZoomRecognizer;
+@synthesize previous_pan;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.temperature = 20.0f;
+    [self.view setBackgroundColor:[self colorForDegrees:self.temperature]];
+    
+    self.previous_pan = 0;
+    self.tapZoomRecognizer = [[BDDROneFingerZoomGestureRecognizer alloc] initWithTarget:self action:@selector(tapZoom:)];
+    [self.tapZoomRecognizer setBouncesScale:NO];
+//    [self.tapZoomRecognizer setMaximumScale:1.0];
+//    [self.tapZoomRecognizer setMinimumScale:-1.0];
+    [self.view addGestureRecognizer:self.tapZoomRecognizer];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -36,6 +52,74 @@
         [self.flipsidePopoverController dismissPopoverAnimated:YES];
     }
 }
+
+- (void)tapZoom:(BDDROneFingerZoomGestureRecognizer *)recognizer{
+    float scale;
+    if(self.previous_pan < recognizer.scale) {
+//        up
+        scale = recognizer.scale / 10;
+    } else {
+//        down
+        scale = (recognizer.scale * -1) / 10;
+    }
+    self.previous_pan = recognizer.scale;
+    NSLog(@"recognizer: %f", scale);
+    [self updateTemperatureViewForRecognizerState:recognizer.state withScale:scale];
+}
+
+- (void)updateTemperatureViewForRecognizerState:(UIGestureRecognizerState *)state withScale:(float)scale {
+    if(self.temperature + scale <= 40 && self.temperature + scale > 0) {
+        self.wanted_temperature = self.temperature + scale;
+        [self.temperatureLabel setText:[NSString stringWithFormat:@"%.0fº", self.wanted_temperature]];
+        [self.view setBackgroundColor:[self colorForDegrees:self.wanted_temperature]];
+        
+        if (state == UIGestureRecognizerStateEnded) {
+            [self setTargetTemperature:self.wanted_temperature];
+            self.previous_pan = 0;
+        }
+        [self setTargetTemperature:scale];
+    }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+- (IBAction)respondToRotation:(UIRotationGestureRecognizer *)recognizer{
+    NSLog(@"%f", recognizer.rotation);
+    float scale;
+    scale = recognizer.rotation / 5;
+    self.previous_pan = recognizer.rotation;
+
+    [self updateTemperatureViewForRecognizerState:recognizer.state withScale:scale];
+}
+
+- (UIColor *)colorForDegrees:(float)target_temperature {
+    float t = (target_temperature - 1) / (40 - 1);
+    
+    // Clamp t to the range [0 ... 1].
+    t = MAX(0.0, MIN(t, 1.0));
+    
+    double r = 0 + t * (255 - 0);
+    double g = 0 + t * (0 - 0);
+    double b = 255 + t * (0 - 255);
+    
+    return [UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:1];
+}
+
+ - (void)setTargetTemperature:(float)target_temperature {
+    self.temperature = self.wanted_temperature;
+}
+
+
+//
+//- (IBAction)respondToHold:(UILongPressGestureRecognizer *)recognizer{
+//    if (recognizer.state == UIGestureRecognizerStateEnded)
+//    {
+//        self.temperature = self.wanted_temperature;
+//    }
+//}
+
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {

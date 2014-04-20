@@ -23,6 +23,7 @@
 		86FD0C361903057A0021644C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD0C121903057A0021644C /* UIKit.framework */; };
 		86FD0C3E1903057A0021644C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86FD0C3C1903057A0021644C /* InfoPlist.strings */; };
 		86FD0C401903057A0021644C /* OpenTherm_ControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD0C3F1903057A0021644C /* OpenTherm_ControllerTests.m */; };
+		DCECE90B823F482188DD6CC7 /* libPods-OpenTherm Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B43F89FD57AB4486B2951206 /* libPods-OpenTherm Controller.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		029E3A37AC364F42934ED179 /* Pods-OpenTherm Controller.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTherm Controller.xcconfig"; path = "Pods/Pods-OpenTherm Controller.xcconfig"; sourceTree = "<group>"; };
 		86FD0C0B1903057A0021644C /* OpenTherm Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenTherm Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD0C0E1903057A0021644C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86FD0C101903057A0021644C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +60,7 @@
 		86FD0C3B1903057A0021644C /* OpenTherm ControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenTherm ControllerTests-Info.plist"; sourceTree = "<group>"; };
 		86FD0C3D1903057A0021644C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86FD0C3F1903057A0021644C /* OpenTherm_ControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenTherm_ControllerTests.m; sourceTree = "<group>"; };
+		B43F89FD57AB4486B2951206 /* libPods-OpenTherm Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenTherm Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				86FD0C111903057A0021644C /* CoreGraphics.framework in Frameworks */,
 				86FD0C131903057A0021644C /* UIKit.framework in Frameworks */,
 				86FD0C0F1903057A0021644C /* Foundation.framework in Frameworks */,
+				DCECE90B823F482188DD6CC7 /* libPods-OpenTherm Controller.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,7 @@
 				86FD0C391903057A0021644C /* OpenTherm ControllerTests */,
 				86FD0C0D1903057A0021644C /* Frameworks */,
 				86FD0C0C1903057A0021644C /* Products */,
+				029E3A37AC364F42934ED179 /* Pods-OpenTherm Controller.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +115,7 @@
 				86FD0C101903057A0021644C /* CoreGraphics.framework */,
 				86FD0C121903057A0021644C /* UIKit.framework */,
 				86FD0C331903057A0021644C /* XCTest.framework */,
+				B43F89FD57AB4486B2951206 /* libPods-OpenTherm Controller.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86FD0C431903057A0021644C /* Build configuration list for PBXNativeTarget "OpenTherm Controller" */;
 			buildPhases = (
+				67C1BCC611484DD28F1E7984 /* Check Pods Manifest.lock */,
 				86FD0C071903057A0021644C /* Sources */,
 				86FD0C081903057A0021644C /* Frameworks */,
 				86FD0C091903057A0021644C /* Resources */,
+				E7E149DEAE15482B9F62E7E2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +261,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67C1BCC611484DD28F1E7984 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E149DEAE15482B9F62E7E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-OpenTherm Controller-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		86FD0C071903057A0021644C /* Sources */ = {
@@ -394,6 +435,7 @@
 		};
 		86FD0C441903057A0021644C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 029E3A37AC364F42934ED179 /* Pods-OpenTherm Controller.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -407,6 +449,7 @@
 		};
 		86FD0C451903057A0021644C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 029E3A37AC364F42934ED179 /* Pods-OpenTherm Controller.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -477,6 +520,7 @@
 				86FD0C451903057A0021644C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86FD0C461903057A0021644C /* Build configuration list for PBXNativeTarget "OpenTherm ControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +529,7 @@
 				86FD0C481903057A0021644C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
