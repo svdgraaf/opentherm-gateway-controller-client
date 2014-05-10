@@ -3,6 +3,7 @@
 
 target "OpenTherm Controller" do
   pod "BDDROneFingerZoomGestureRecognizer"
+  pod "RestKit"
 
 end
 

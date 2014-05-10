@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		867A94EE1908346C00082903 /* otgInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867A94ED1908346C00082903 /* otgInfoTableViewController.m */; };
 		86FD0C0F1903057A0021644C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD0C0E1903057A0021644C /* Foundation.framework */; };
 		86FD0C111903057A0021644C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD0C101903057A0021644C /* CoreGraphics.framework */; };
 		86FD0C131903057A0021644C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD0C121903057A0021644C /* UIKit.framework */; };
@@ -16,7 +17,6 @@
 		86FD0C221903057A0021644C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD0C201903057A0021644C /* Main_iPhone.storyboard */; };
 		86FD0C251903057A0021644C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD0C231903057A0021644C /* Main_iPad.storyboard */; };
 		86FD0C281903057A0021644C /* otgMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD0C271903057A0021644C /* otgMainViewController.m */; };
-		86FD0C2B1903057A0021644C /* otgFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD0C2A1903057A0021644C /* otgFlipsideViewController.m */; };
 		86FD0C2D1903057A0021644C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FD0C2C1903057A0021644C /* Images.xcassets */; };
 		86FD0C341903057A0021644C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD0C331903057A0021644C /* XCTest.framework */; };
 		86FD0C351903057A0021644C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD0C0E1903057A0021644C /* Foundation.framework */; };
@@ -38,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		029E3A37AC364F42934ED179 /* Pods-OpenTherm Controller.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTherm Controller.xcconfig"; path = "Pods/Pods-OpenTherm Controller.xcconfig"; sourceTree = "<group>"; };
+		867A94EC1908346C00082903 /* otgInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otgInfoTableViewController.h; sourceTree = "<group>"; };
+		867A94ED1908346C00082903 /* otgInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otgInfoTableViewController.m; sourceTree = "<group>"; };
 		86FD0C0B1903057A0021644C /* OpenTherm Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenTherm Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD0C0E1903057A0021644C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86FD0C101903057A0021644C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,8 +54,6 @@
 		86FD0C241903057A0021644C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		86FD0C261903057A0021644C /* otgMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = otgMainViewController.h; sourceTree = "<group>"; };
 		86FD0C271903057A0021644C /* otgMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = otgMainViewController.m; sourceTree = "<group>"; };
-		86FD0C291903057A0021644C /* otgFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = otgFlipsideViewController.h; sourceTree = "<group>"; };
-		86FD0C2A1903057A0021644C /* otgFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = otgFlipsideViewController.m; sourceTree = "<group>"; };
 		86FD0C2C1903057A0021644C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		86FD0C321903057A0021644C /* OpenTherm ControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenTherm ControllerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD0C331903057A0021644C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -129,10 +129,10 @@
 				86FD0C231903057A0021644C /* Main_iPad.storyboard */,
 				86FD0C261903057A0021644C /* otgMainViewController.h */,
 				86FD0C271903057A0021644C /* otgMainViewController.m */,
-				86FD0C291903057A0021644C /* otgFlipsideViewController.h */,
-				86FD0C2A1903057A0021644C /* otgFlipsideViewController.m */,
 				86FD0C2C1903057A0021644C /* Images.xcassets */,
 				86FD0C151903057A0021644C /* Supporting Files */,
+				867A94EC1908346C00082903 /* otgInfoTableViewController.h */,
+				867A94ED1908346C00082903 /* otgInfoTableViewController.m */,
 			);
 			path = "OpenTherm Controller";
 			sourceTree = "<group>";
@@ -300,10 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867A94EE1908346C00082903 /* otgInfoTableViewController.m in Sources */,
 				86FD0C1B1903057A0021644C /* main.m in Sources */,
 				86FD0C1F1903057A0021644C /* otgAppDelegate.m in Sources */,
 				86FD0C281903057A0021644C /* otgMainViewController.m in Sources */,
-				86FD0C2B1903057A0021644C /* otgFlipsideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    NSURL *baseURL = [NSURL URLWithString:@"http://10.0.0.29:9181/"];
+        AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+
+    
     return YES;
 }
 							

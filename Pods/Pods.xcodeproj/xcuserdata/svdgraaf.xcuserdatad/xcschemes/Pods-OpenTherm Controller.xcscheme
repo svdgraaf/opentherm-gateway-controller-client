@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9FB276A2F9D49CC9591BA42"
+               BlueprintIdentifier = "D487FC7EB8C842118B4DB7CF"
                BuildableName = "libPods-OpenTherm Controller.a"
                BlueprintName = "Pods-OpenTherm Controller"
                ReferencedContainer = "container:Pods.xcodeproj">

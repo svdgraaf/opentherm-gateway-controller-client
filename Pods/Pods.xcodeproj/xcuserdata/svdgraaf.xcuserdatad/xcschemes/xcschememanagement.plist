@@ -4,7 +4,37 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-OpenTherm Controller-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-OpenTherm Controller-BDDROneFingerZoomGestureRecognizer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OpenTherm Controller-ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OpenTherm Controller-RKValueTransformers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OpenTherm Controller-RestKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OpenTherm Controller-SOCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OpenTherm Controller-TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4DEEC84BBCFC4FFAA9376017</key>
+		<key>52ECF85C17824AF78DB75950</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9FB276A2F9D49CC9591BA42</key>
+		<key>576F1B00D78D4F98BC614619</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79C8D8BB66A14F5894D38554</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5536163EFC2417398A1CB6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACA8744F72204DAA859169B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D487FC7EB8C842118B4DB7CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7326F1278CA404482626451</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E96E64963F3141E988C1BFC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
