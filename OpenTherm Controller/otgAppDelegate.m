@@ -7,15 +7,17 @@
 //
 
 #import "otgAppDelegate.h"
+#import "AFHTTPClient.h"
+#import "RKObjectManager.h"
 
 @implementation otgAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURL *baseURL = [NSURL URLWithString:@"http://10.0.0.29:9181/"];
-        AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    NSURL *baseURL = [NSURL URLWithString:@"http://10.0.0.31:9181/"];
+    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+//    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
 
     
     return YES;

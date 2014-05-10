@@ -20,12 +20,15 @@
 @synthesize temperatureLabel;
 @synthesize tapZoomRecognizer;
 @synthesize previous_pan;
+@synthesize activitySpinner;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.temperature = 20.0f;
+    [self.temperatureLabel setText:[NSString stringWithFormat:@"%.0fº", self.temperature]];
     [self.view setBackgroundColor:[self colorForDegrees:self.temperature]];
+    [self.activitySpinner stopAnimating];
     
     self.previous_pan = 0;
     self.tapZoomRecognizer = [[BDDROneFingerZoomGestureRecognizer alloc] initWithTarget:self action:@selector(tapZoom:)];
@@ -44,14 +47,14 @@
 
 #pragma mark - Flipside View Controller
 
-- (void)flipsideViewControllerDidFinish:(otgFlipsideViewController *)controller
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-    }
-}
+//- (void)flipsideViewControllerDidFinish:(otgFlipsideViewController *)controller
+//{
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    } else {
+//        [self.flipsidePopoverController dismissPopoverAnimated:YES];
+//    }
+//}
 
 - (void)tapZoom:(BDDROneFingerZoomGestureRecognizer *)recognizer{
     float scale;

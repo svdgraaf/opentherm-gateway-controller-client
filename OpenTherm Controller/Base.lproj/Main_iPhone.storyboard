@@ -30,7 +30,7 @@
                                     <segue destination="j7q-Sp-YT2" kind="modal" customClass="UIStoryboardPopoverSegue" modalTransitionStyle="flipHorizontal" id="6rr-dn-gEl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHi-gh-eeP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHi-gh-eeP">
                                 <rect key="frame" x="33" y="189" width="280" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
@@ -55,6 +55,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="activitySpinner" destination="Oio-Ab-eWS" id="ih8-fk-GVJ"/>
                         <outlet property="temperatureLabel" destination="xHi-gh-eeP" id="bWq-Pw-Nkw"/>
                     </connections>
                 </viewController>
