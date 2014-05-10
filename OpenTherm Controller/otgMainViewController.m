@@ -8,6 +8,7 @@
 
 #import "otgMainViewController.h"
 #import "BDDROneFingerZoomGestureRecognizer.h"
+#import "RKObjectManager.h"
 
 @interface otgMainViewController ()
 
@@ -78,6 +79,7 @@
         
         if (state == UIGestureRecognizerStateEnded) {
             [self setTargetTemperature:self.wanted_temperature];
+            [self commitTemperature:self.wanted_temperature];
             self.previous_pan = 0;
         }
         [self setTargetTemperature:scale];
@@ -97,6 +99,7 @@
     [self updateTemperatureViewForRecognizerState:recognizer.state withScale:scale];
 }
 
+
 - (UIColor *)colorForDegrees:(float)target_temperature {
     float t = (target_temperature - 1) / (40 - 1);
     
@@ -112,6 +115,12 @@
 
  - (void)setTargetTemperature:(float)target_temperature {
     self.temperature = self.wanted_temperature;
+}
+
+- (void)commitTemperature:(float)target_temperature {
+    RKObjectManager *object_manager = [RKObjectManager sharedManager];
+    AFHTTPClient *client = object_manager.HTTPClient;
+    [client postPath:@"temperature" parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%.0f", target_temperature], @"temperature", nil] success:nil failure:nil];
 }
 
 
